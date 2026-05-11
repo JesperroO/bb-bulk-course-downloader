@@ -7,8 +7,8 @@ Works with any university running Blackboard Learn.
 ## Install
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/)
-2. Install from **[Greasy Fork](#)** *(link coming soon)*  
-   or click **Raw** on `blackboard-download.user.js` above and Tampermonkey will prompt you to install
+2. Click **Raw** on `blackboard-download.user.js` above and copy all the content
+3. Open Tampermonkey → **Create a new script**, clear the default content, paste and save
 
 ## Usage
 

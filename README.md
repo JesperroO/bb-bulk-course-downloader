@@ -7,7 +7,8 @@ Tampermonkey 脚本，在 Blackboard 课程文件目录页右上角加一个下�
 ## 安装
 
 1. 装 [Tampermonkey](https://www.tampermonkey.net/)
-2. 从 **[Greasy Fork](#)** 安装 *(链接待更新)*，或点本页 `blackboard-download.user.js` 的 **Raw** 按钮，Tampermonkey 会弹安装提示
+2. 点本页 `blackboard-download.user.js` 的 **Raw** 按钮，全选复制所有内容
+3. 打开 Tampermonkey → **添加新脚本**，清空默认内容，粘贴进去，保存
 
 ## 用法
 
