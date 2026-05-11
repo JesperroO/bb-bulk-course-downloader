@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Blackboard 一键下载
+// @name         BB 一键下载所有课件
 // @namespace    http://tampermonkey.net/
 // @version      2.1
 // @description  在 Blackboard 课程内容页一键批量下载课件。需先进入某个课程的文件目录（URL 含 listContent.jsp）才会出现下载按钮。

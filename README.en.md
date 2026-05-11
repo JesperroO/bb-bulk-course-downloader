@@ -1,4 +1,4 @@
-# Blackboard One-Click Downloader
+# Blackboard Bulk Course Downloader
 
 A Tampermonkey userscript that adds a download button to any Blackboard course content page. One click to bulk-download all files in the current folder and its subfolders.
 

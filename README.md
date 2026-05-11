@@ -1,4 +1,4 @@
-# Blackboard 一键下载
+# BB 一键下载所有课件
 
 Tampermonkey 脚本，在 Blackboard 课程文件目录页右上角加一个下载按钮，点一下把整个目录（含子文件夹）的课件全下了。
 
