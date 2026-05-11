@@ -5,7 +5,7 @@
 // @description  在 Blackboard 课程内容页一键批量下载课件。需先进入某个课程的文件目录（URL 含 listContent.jsp）才会出现下载按钮。
 // @author       JesperroO
 // @match        https://*/webapps/blackboard/content/listContent.jsp*
-// @grant        GM_notification
+// @grant        none
 // ==/UserScript==
 
 (function() {
@@ -119,21 +119,22 @@
         btn.textContent = `📥 下载 0/${fileMap.length}`;
 
         // 从 Content-Disposition 或最终 URL 解析真实文件名
+        function safeDecode(s) {
+            try { return decodeURIComponent(s); } catch (e) { return s; }
+        }
+
         function resolveFilename(item, response) {
             const disposition = response.headers.get('Content-Disposition');
             if (disposition) {
-                // 优先 filename*=UTF-8''... 格式
                 let m = disposition.match(/filename\*=UTF-8''([^;\n]+)/i);
-                if (m) return decodeURIComponent(m[1].trim());
+                if (m) return safeDecode(m[1].trim());
                 m = disposition.match(/filename="?([^";\n]+)"?/i);
-                if (m) return decodeURIComponent(m[1].trim());
+                if (m) return safeDecode(m[1].trim());
             }
-            // 跟随重定向后的最终 URL
             if (response.url && response.url !== `${baseUrl}${item.url}`) {
-                const urlName = decodeURIComponent(response.url.split('/').pop().split('?')[0]);
+                const urlName = safeDecode(response.url.split('/').pop().split('?')[0]);
                 if (urlName && urlName !== 'xid') return urlName;
             }
-            // 回退到 BB 显示名（确保有扩展名）
             return item.displayName;
         }
 
